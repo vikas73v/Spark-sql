@@ -24,7 +24,7 @@ object sql {
     val location= hc.sql("select * from location")
     location.registerTempTable("location")
 
-    val join= hc.sql (s"select A.*,B.*,C.* from ${tet1} A left semi join dept B on(A.id=B.id) left semi join C on (A.id= C.id)")
+    val join= hc.sql (s"select A.*,B.*,C.* from employee A left semi join dept B on(A.id=B.id) left semi join C on (A.id= C.id)")
 
     join.registerTempTable("join_tables")
   }
