@@ -13,8 +13,9 @@ object SparkUtilities {
   }
 
   def getDataFrame(hc:HiveContext, database: String, inputTable: String, outputTable: String) : DataFrame = {
-    val dF= hc.sql("select * from" +database+"."+inputTable)
+    val dF= hc.sql("select * from finance_store_dev.inputTable")
     dF.registerTempTable(outputTable)
     dF
   }
+
 }
